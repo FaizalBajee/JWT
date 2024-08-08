@@ -1,9 +1,10 @@
 const jwt = require('jsonwebtoken')
 const Login = require('../models/login')
 const response = require('../controllers/response.controller')
+require('dotenv').config()
 async function loginService(user, pass) {
     try {
-        const accessToken=jwt.sign(user,"123456")
+        const accessToken = jwt.sign(user,process.env.JWT_SECRET)
         const login = await Login.create({
             user: user,
             password: pass

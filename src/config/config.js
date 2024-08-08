@@ -1,7 +1,8 @@
+require('dotenv').config()
 module.exports={
-    host: "localhost",
-    port: 8333,
-    user: "root",
-    password: "derik@gmail.com1",
-    database: "sequelize"
+    host: process.env.HOST,
+    port: process.env.PORT,
+    user: process.env.USER,
+    password: process.env.PASSWORD,
+    database: process.env.DB
 }
